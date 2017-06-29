@@ -40,6 +40,7 @@ def tasks_search():
 @jarvis.route('/apis/search', methods=['POST'])
 def apis_search():
     text = request.values.get('text')
+    # speech to text
     response = wikipedia.page(text)
     return response.content
 
@@ -51,12 +52,12 @@ def tasks_monitor():
 
 @jarvis.route('/apis/monitor', methods=['POST'])
 def apis_monitor():
+    emotion, joke = 'sad', ''
     # call the tone analyzer and return emotion
-    if emotion == 'sad':
-        joke = requests.get('http://api.icndb.com/jokes/random')
-        joke = json.loads(joke.content)
-        return joke['value']['joke']
-
+    joke = requests.get('http://api.icndb.com/jokes/random')
+    joke = json.loads(joke.content)
+    joke = joke['value']['joke']
+    return json.dumps({'emotion': emotion, 'joke': joke})
 
 @jarvis.route('/tasks/insights')
 def tasks_insights():
