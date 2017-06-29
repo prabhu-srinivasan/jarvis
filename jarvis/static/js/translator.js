@@ -2,7 +2,7 @@ var recognition = new webkitSpeechRecognition();
 
 recognition.lang = "en-IN";
 recognition.continuous = true;
-recognition.interimResults = false;
+recognition.interimResults = true;
 recognition.onresult = function(e){
   process(e.results);
 };
