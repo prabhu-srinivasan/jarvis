@@ -69,6 +69,12 @@ def apis_monitor():
     joke = joke['value']['joke']
     return json.dumps({'emotion': emotion, 'joke': joke})
 
+
 @jarvis.route('/tasks/insights')
 def tasks_insights():
     return 'Insights !!'
+
+
+@jarvis.route('/apis/insights')
+def apis_insights():
+    pass
