@@ -19,4 +19,7 @@ function process(results){
   // console.log(results);
   transcript = $.trim(results[results.length - 1][0].transcript);
   $("#translated-text").html(transcript);
+  $.post('/apis/search', {'text': transcript}).done(function(data){
+    $("#search-results").html(data);
+  });
 }

@@ -19,3 +19,10 @@
   <div class="col-md-2">&nbsp;</div>
 </div>
 {% endblock %}
+
+{% block scripts %}
+<script>
+  var msg = new SpeechSynthesisUtterance('Hey guys Jarvis here. How may I help you.');
+  window.speechSynthesis.speak(msg);
+</script>
+{% endblock %}

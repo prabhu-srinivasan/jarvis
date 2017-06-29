@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-6">&nbsp;</div>
+  <div class="col-md-5" style="margin-top: 100px;">
+    <div class="panel panel-default lead">
+      <div class="panel-heading">Lookup for</div>
+      <div class="panel-body" id="translated-text">...</div>
+    </div>
+    <div class="panel panel-default lead">
+      <div class="panel-heading">What I found in wikipedia</div>
+      <div class="panel-body" id="search-results">...</div>
+    </div>
+  </div>
+  <div class="col-md-1">&nbsp;</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  var msg = new SpeechSynthesisUtterance('Just tell me want you want to search for.');
+  window.speechSynthesis.speak(msg);
+</script>
+<script src="/static/jarvis/js/search.js"></script>
+{% endblock %}
