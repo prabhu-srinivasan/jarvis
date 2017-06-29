@@ -1,5 +1,8 @@
 ## JARVIS ##
 
+![I am JARVIS](https://raw.githubusercontent.com/akhilputhiry/jarvis/master/sample.png)
+
+
 Installation
 
 ```
