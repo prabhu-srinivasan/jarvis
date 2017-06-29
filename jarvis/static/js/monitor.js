@@ -24,12 +24,12 @@ function process(results){
     $("#emotion").html(data.emotion);
 
     // crack joke if sad
-    if(data.emotion == 'sad'){
+    if(data.emotion == 'Sadness'){
       crackjoke(data.joke);
     }
 
     // take photo if happy
-    if(data.emotion == 'joy'){
+    if(data.emotion == 'Joy'){
       takephoto();
     }
   });
@@ -37,7 +37,8 @@ function process(results){
 
 
 function crackjoke(joke){
-  var msg = new SpeechSynthesisUtterance('Yo man. Listen this');
+  console.log('Joke');
+  var msg = new SpeechSynthesisUtterance('Yo man. You seems like sad. Listen this');
   window.speechSynthesis.speak(msg);
   var joke = new SpeechSynthesisUtterance(joke);
   window.speechSynthesis.speak(joke);
