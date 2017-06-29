@@ -8,7 +8,8 @@ install:
 	pip install -r requirements.txt
 
 server:
-	PYTHONPATH=visual_recognition	FLASK_APP=app.py python -m flask run
+	# PYTHONPATH=visual_recognition	FLASK_APP=app.py python -m flask run
+	python server.py
 
 run: clean server
 
