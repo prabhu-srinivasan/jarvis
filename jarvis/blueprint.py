@@ -17,7 +17,7 @@ def home():
 
 @jarvis.route('/tasks/translate')
 def translate():
-    return 'Translate !!'
+    return render_template('translator.html')
 
 
 @jarvis.route('/tasks/search')
