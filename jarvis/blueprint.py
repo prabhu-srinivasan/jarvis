@@ -1,5 +1,6 @@
 import json
 import wikipedia
+import requests
 
 from flask import request, Blueprint, render_template
 
@@ -27,7 +28,8 @@ def tasks_translate():
 def apis_translate():
     text = request.values.get('text')
     format = request.values.get('format')
-    return json.dumps({'text': text, 'format': format})
+    # call the translator
+    return ''
 
 
 @jarvis.route('/tasks/search')
@@ -44,7 +46,16 @@ def apis_search():
 
 @jarvis.route('/tasks/monitor')
 def tasks_monitor():
-    return 'Monitor !!'
+    return render_template('monitor.html')
+
+
+@jarvis.route('/apis/monitor', methods=['POST'])
+def apis_monitor():
+    # call the tone analyzer and return emotion
+    if emotion == 'sad':
+        joke = requests.get('http://api.icndb.com/jokes/random')
+        joke = json.loads(joke.content)
+        return joke['value']['joke']
 
 
 @jarvis.route('/tasks/insights')
