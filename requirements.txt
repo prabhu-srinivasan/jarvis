@@ -25,7 +25,7 @@ pycparser==2.17
 pyopenssl==17.0.0
 pysolr==3.6.0
 requests==2.18.1
-scandir==1.5
+#scandir==1.5
 six==1.10.0
 urllib3==1.21.1
 watson-developer-cloud==0.26.0
