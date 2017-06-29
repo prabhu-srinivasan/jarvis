@@ -1,1 +1,14 @@
-## Simple Flask App Using Watson Visual Recognition ##
+## JARVIS ##
+
+Installation
+
+```
+make install
+```
+
+
+Running the app
+
+```
+make run
+```
