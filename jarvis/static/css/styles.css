@@ -1,0 +1,12 @@
+body {
+  background-image: url('/static/jarvis/images/jarvis.jpg');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+
+.vertical-center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
