@@ -35,12 +35,14 @@ function process(results){
   });
 }
 
+
 function crackjoke(joke){
   var msg = new SpeechSynthesisUtterance('Yo man. Listen this');
   window.speechSynthesis.speak(msg);
   var joke = new SpeechSynthesisUtterance(joke);
   window.speechSynthesis.speak(joke);
 }
+
 
 function takephoto(){
   console.log('Take photo !!!');
