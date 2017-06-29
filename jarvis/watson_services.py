@@ -6,6 +6,7 @@ from watson_developer_cloud import (
     LanguageTranslatorV2,
     TextToSpeechV1,
     ToneAnalyzerV3,
+    DiscoveryV1
 )
 
 
@@ -42,3 +43,11 @@ def tone_analyzer(text):
     p = 'Fl21oTtxbbfG'
     tone_analyzer = ToneAnalyzerV3(username=u, password=p, version='2016-05-19')
     return tone_analyzer.tone(text)
+
+
+def create_collection():
+    pass
+
+
+def query_collection():
+    pass
