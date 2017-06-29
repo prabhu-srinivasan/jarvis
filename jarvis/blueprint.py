@@ -29,8 +29,8 @@ def tasks_translate():
 def apis_translate():
     text = request.values.get('text')
     format = request.values.get('format')
-    print(text)
-    return translate(text, format)
+    result = translate(text, format)
+    return result if result else ''
 
 
 @jarvis.route('/tasks/search')
