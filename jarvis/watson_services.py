@@ -1,5 +1,6 @@
 import json
 import os
+import glob
 import random
 
 from watson_developer_cloud import (
@@ -45,9 +46,30 @@ def tone_analyzer(text):
     return tone_analyzer.tone(text)
 
 
-def create_collection():
-    pass
+#-- Watson service to perform query on top of documents
+
+def upload_document_to_collection(file_path):
+    collection_id = "0410f7f2-c65d-465f-935d-5b237a03b7dd"
+    environment_id = "2534eff3-6e4e-4908-a6e4-dede8e0f92be"
+    discovery = DiscoveryV1(
+        username="865488e6-c594-46e8-a1e5-1e7b34528c76",
+        password="WPMP8jMMBEBk",
+        version="2016-05-05"
+    )
+    with open(file_path) as fileinfo:
+        discovery.add_document(
+            environment_id,
+            collection_id,
+            file_info=fileinfo
+        )
 
 
-def query_collection():
-    pass
+def query_collection(query):
+    collection_id = "0410f7f2-c65d-465f-935d-5b237a03b7dd"
+    environment_id = "2534eff3-6e4e-4908-a6e4-dede8e0f92be"
+    discovery = DiscoveryV1(
+        username="865488e6-c594-46e8-a1e5-1e7b34528c76",
+        password="WPMP8jMMBEBk",
+        version="2016-05-05"
+    )
+    my_query = discovery.query(environment_id, collection_id, query)

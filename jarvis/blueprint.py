@@ -72,9 +72,4 @@ def apis_monitor():
 
 @jarvis.route('/tasks/insights')
 def tasks_insights():
-    return 'Insights !!'
-
-
-@jarvis.route('/apis/insights')
-def apis_insights():
-    pass
+    return render_template('analyze.html')
