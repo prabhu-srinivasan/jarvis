@@ -3,7 +3,7 @@ import wikipedia
 import requests
 
 from flask import request, Blueprint, render_template
-from watson_services import tone_analyzer, translate
+from watson_services import tone_analyzer, translate, query_collection
 
 
 jarvis = Blueprint(
@@ -73,3 +73,22 @@ def apis_monitor():
 @jarvis.route('/tasks/insights')
 def tasks_insights():
     return render_template('analyze.html')
+
+
+@jarvis.route('/tasks/review')
+def tasks_review():
+    review_results = {}
+    keyword_results = []
+    review_query = {'aggregation': 'term(enriched_text.docSentiment.type,count:3)'}
+    keywords_query = {'aggregation': 'term(enriched_text.keywords.text,count:5)'}
+    reviews = query_collection(review_query)
+    keywords = query_collection(keywords_query)
+    reviews = reviews['aggregations'][0]['results']
+    keywords = keywords['aggregations'][0]['results']
+    for review in reviews:
+        key = review.get('key')
+        value = review.get('matching_results')
+        review_results.update({key: value})
+    for keyword in keywords:
+        keyword_results.append(keyword.get('key'))
+    return render_template('review.html', reviews=review_results, keywords=keyword_results)

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-6">&nbsp;</div>
+  <div class="col-md-5">
+    {% if reviews.positive > reviews.negative %}
+    <img src="/static/jarvis/images/positive.png" />
+    {% endif %}
+    {% if reviews.negative > reviews.positive %}
+    <img src="/static/jarvis/images/negative.jpg" />
+    {% endif %}
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Positive Reviews</div>
+          <div class="panel-body lead">{{ reviews.positive }}</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Negative Reviews</div>
+          <div class="panel-body lead">{{ reviews.negative }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Top keywords</div>
+      <div class="panel-body lead">
+        {% for keyword in keywords %}
+          {{ keyword }},&nbsp;
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-1">&nbsp;</div>
+</div>
+{% endblock %}

@@ -65,11 +65,11 @@ def upload_document_to_collection(file_path):
 
 
 def query_collection(query):
-    collection_id = "0410f7f2-c65d-465f-935d-5b237a03b7dd"
-    environment_id = "2534eff3-6e4e-4908-a6e4-dede8e0f92be"
+    collection_id = "3d1f4781-f502-441a-a17a-21e60c8aa2ff"
+    environment_id = "b013b430-3922-41a4-8a9b-4610ac233a42"
     discovery = DiscoveryV1(
-        username="865488e6-c594-46e8-a1e5-1e7b34528c76",
-        password="WPMP8jMMBEBk",
+        username="c75b8256-1d19-4377-941d-bab1df00beb5",
+        password="l7g2XTux1GkX",
         version="2016-05-05"
     )
-    my_query = discovery.query(environment_id, collection_id, query)
+    return discovery.query(environment_id, collection_id, query)
