@@ -1,4 +1,51 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="row" style="margin-top: 50px;">
+  <div class="col-md-6">&nbsp;</div>
+  <div class="col-md-5">
+    <div class="alert alert-success" role="alert">
+      <strong>Devices consuming low energy</strong>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <ul>
+          <li>Television</li>
+          <li>Refrigerator</li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert alert-danger" role="alert">
+      <strong>Devices consuming high energy</strong>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <ul>
+          <li>Microwave</li>
+          <li>Coffee Maker</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Total Consumption</div>
+          <div class="panel-body lead">100 KW</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Peak time</div>
+          <div class="panel-body lead">6:00 PM to 10:00 PM</div>
+        </div>
+      </div>
+      <strong style="margin-top: 30px;">Recommendations</strong>
+      <ul>
+        <li>Do not use Microwave and Coffee make during peak times</li>
+        <li>Consider checking/changing the devices consuming high energy</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-1">&nbsp;</div>
+</div>
 {% endblock %}
